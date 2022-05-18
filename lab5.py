@@ -19,6 +19,9 @@ config = {
 
 firebase = pyrebase.initialize_app(config)
 
+LED_ON = 1
+LED_OFF = 2
+
 if __name__ == '__main__':
 
     try:
@@ -50,14 +53,14 @@ if __name__ == '__main__':
             level = Keys.child("level").get().val()
 
             if state:
-                print("LED22 now is ON.")
-                # GPIO.output(LED22, GPIO.HIGH)
+                print("LED now is ON.")
+                write_order(serial_file, Order.HELLO)
+                write_i8(serial_file, 1)
             else:
-                print("LED22 now is OFF.")
-                # GPIO.output(LED22, GPIO.LOW)
+                print("LED now is OFF.")
+                write_order(serial_file, Order.HELLO)
+                write_i8(serial_file, 2)
 
 
     except KeyboardInterrupt:
-        print("CLEAN UP GPIO")
-        # clean GPIO
-        # GPIO.cleanup()
+        print("Stopped")

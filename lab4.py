@@ -49,14 +49,13 @@ if __name__ == '__main__':
             database = firebase.database()
             ProjectBucket = database.child("project-503487597563")
             ledValue = ProjectBucket.child("LED").get().val()
-            print(ledValue)
 
             if str(ledValue) == "\"OFF\"":
                 print("LED now is OFF.")
                 write_order(serial_file, Order.HELLO)
                 write_i8(serial_file, 2)
             else:
-                print("LED22 now is ON.")
+                print("LED now is ON.")
                 write_order(serial_file, Order.HELLO)
                 write_i8(serial_file, 1)
 

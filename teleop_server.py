@@ -81,6 +81,8 @@ print("Connected To Client")
 i = 0
 
 with picamera.PiCamera(resolution=CAMERA_RESOLUTION, sensor_mode=CAMERA_MODE, framerate=FPS) as camera:
+    camera.vflip = True
+    camera.hflip = True
     if record_video:
         camera.start_recording("{}.h264".format(args.video_file))
 

@@ -71,7 +71,7 @@ MAX_ANGLE = np.pi / 4  # 2 * np.pi / 3
 
 # Teleoperation
 TELEOP_PORT = "5556"
-RASPBERRY_IP = "192.168.0.104"
+RASPBERRY_IP = "192.168.0.102"
 
 
 # Arrow keys
